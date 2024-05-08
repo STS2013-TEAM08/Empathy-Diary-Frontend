@@ -1,0 +1,2 @@
+# Empathy-Diary-Frontend
+공감 일기장 프론트엔드 레포지토리입니다
