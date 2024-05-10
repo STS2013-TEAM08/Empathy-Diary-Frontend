@@ -1,0 +1,82 @@
+.main-container {
+    position: relative;
+    top: 159px;
+}
+
+.signup-form {
+    margin:0 32px 0 32px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-form input {
+    width: 326px;
+    margin: 8px 0;
+    padding: 22px 0 22px 47px;
+    border: 1px solid #FFD686;
+    border-radius: 16px;
+    background: transparent;
+    outline: none;
+    font-size: 14px;
+  }
+  
+.retry-inst {
+    
+    width: 326px;
+    padding: 0 0 0 23px;
+    text-align: left;
+    font-size: 14px;
+    color: #E24848;
+    margin: 1px 0;
+}
+
+.signup-form button {
+    width: 326px;
+    padding: 21px 0 21px 0;
+    margin: 24px 0;
+    border: none;
+    border-radius: 16px;
+    background-color: #FFD686;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.to-signin {
+    display: flex; 
+    align-items: center; 
+    color: #111111;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 56px 0 ;
+    justify-content: center; 
+}
+
+.to-signin span {
+    font-weight: bold;
+}
+
+.to-signin a { 
+    text-decoration: underline;
+    font-weight: bold;
+    color: #FFD686;
+    padding: 0 0 0 14px;
+}
+
+@media (max-width: 530px) {
+    .main-container {
+        position: relative;
+        top: 0;
+    }
+
+    .signup-form input, .signup-form button, .retry-inst {
+        width: 80%; 
+        margin-left: auto; 
+        margin-right: auto; 
+    }
+
+    .retry-inst {
+        padding: 0 23px; 
+    }
+}
