@@ -1,0 +1,46 @@
+.main-container {
+    position: relative;
+    top: 241px;
+}
+
+.checkImg {
+    width: 60px;
+    height: auto;
+    margin: 26px;
+}
+
+.welcome {
+    font-size: 24px;
+    padding: 6px 0;
+    margin: 0;
+}
+
+.signin-inst {
+    font-size: 14px;
+    padding: 6px 0;
+    margin: 0;
+}
+
+.main-container button {
+    width: 180px;
+    padding: 21px 0 21px 0;
+    margin: 44px 0;
+    border: none;
+    border-radius: 100px;
+    background-color: #FFD686;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+@media (max-width: 530px) {
+    .main-container button {
+        width: 80%; 
+        margin-left: auto; 
+        margin-right: auto; 
+    }
+
+    .retry-inst {
+        padding: 0 23px; 
+    }
+}
