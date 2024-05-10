@@ -3,7 +3,7 @@ import "./signin.css";
 
 export default function Signin() {
     return(
-        <div>
+        <div className="main-container">
             <img src="/logo.png" className="logo"></img>
             <div className="login-form">
                 <input type="text" placeholder="아이디" />

@@ -1,3 +1,8 @@
+.main-container {
+    position: relative;
+    top: 150px;
+}
+
 .logo {
     width: 156px;
     height: auto;
@@ -13,8 +18,8 @@
 }
 
 .login-form input {
-    display: block;
-    width: 100%;
+    /*display: block;*/
+    width: 326px;
     margin: 9px 0 18px 0;
     padding: 22px 0 22px 47px;
     border: 1px solid #FFD686;
@@ -26,7 +31,7 @@
   
 
 .login-form button {
-    width: 100%;
+    width: 326px;
     padding: 21px 0 21px 0;
     border: none;
     border-radius: 16px;
@@ -37,22 +42,30 @@
 }
 
 .to-signup {
-    display: flex; /* flexbox 레이아웃 적용 */
-    align-items: center; /* 수직 중앙 정렬 */
+    display: flex; 
+    align-items: center; 
     color: #111111;
     text-decoration: none;
     font-size: 14px;
     margin: 59px 0 0 0;
-    justify-content: center; /* 가로 방향 중앙 정렬 */
+    justify-content: center; 
 }
 
 .to-signup span {
     font-weight: bold;
 }
 
-.to-signup a { /* Link 컴포넌트에 직접 스타일을 적용하려면 a를 사용해야 합니다. */
+.to-signup a { 
     text-decoration: underline;
     font-weight: bold;
     color: #FFD686;
     padding: 0 0 0 14px;
+}
+
+@media (max-width: 530px) {
+    .logo {
+        width: 156px;
+        height: auto;
+        margin-bottom: 48px;
+    }
 }
