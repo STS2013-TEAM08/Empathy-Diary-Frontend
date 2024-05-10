@@ -2,7 +2,7 @@
     width: 156px;
     height: auto;
     margin-top: 150px;
-    margin-bottom: 48px;
+    margin-bottom: 36px;
   }
 
 .login-form {
@@ -15,7 +15,7 @@
 .login-form input {
     /*display: block;*/
     width: 326px;
-    margin: 9px 0 18px 0;
+    margin: 9px 0 9px 0;
     padding: 22px 0 22px 47px;
     border: 1px solid #FFD686;
     border-radius: 16px;
@@ -24,10 +24,20 @@
     font-size: 14px;
   }
   
+.retry-inst {
+    
+    width: 326px;
+    padding: 0 0 0 23px;
+    text-align: left;
+    font-size: 14px;
+    color: #E24848;
+    margin: 1px 0;
+}
 
 .login-form button {
     width: 326px;
     padding: 21px 0 21px 0;
+    margin: 15px 0;
     border: none;
     border-radius: 16px;
     background-color: #FFD686;
@@ -42,7 +52,7 @@
     color: #111111;
     text-decoration: none;
     font-size: 14px;
-    margin: 59px 0 0 0;
+    margin: 44px 0 ;
     justify-content: center; 
 }
 
@@ -62,5 +72,15 @@
         width: 156px;
         height: auto;
         margin-bottom: 48px;
+    }
+
+    .login-form input, .login-form button, .retry-inst {
+        width: 80%; 
+        margin-left: auto; 
+        margin-right: auto; 
+    }
+
+    .retry-inst {
+        padding: 0 23px; 
     }
 }
