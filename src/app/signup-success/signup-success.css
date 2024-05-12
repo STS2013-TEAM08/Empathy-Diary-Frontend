@@ -34,6 +34,10 @@
 }
 
 @media (max-width: 530px) {
+    .main-container {
+        top: 0px;
+    }
+    
     .main-container button {
         width: 80%; 
         margin-left: auto; 
