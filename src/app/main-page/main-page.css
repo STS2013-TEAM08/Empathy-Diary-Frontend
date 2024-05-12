@@ -27,7 +27,7 @@
     margin: 0 32px 0 0;
 }
 
-.tap, .tap-active {
+.tab, .tab-active {
     width: 55px;
     height: 55px;
     margin: 0;
@@ -35,7 +35,7 @@
     border-radius: 16px 16px 0 0;
 }
 
-.tap-active {
+.tab-active {
     background-color: white;
 }
 
@@ -44,10 +44,23 @@
     height: 25px;
 }
 
-.tap .book-icon, .tap .emotion-icon, .tap .profile-icon {
+.tab .book-icon, .tab .emotion-icon, .tab .profile-icon {
     color: white;
 }
 
-.tap-active .book-icon, .tap-active .emotion-icon, .tap-active .profile-icon {
+.tab-active .book-icon, .tab-active .emotion-icon, .tab-active .profile-icon {
     color: #FFD686;
+}
+
+@media (max-width: 530px) {
+    .top-container {
+        width: 100%;
+        height: 14vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        background-color: #FFD686;
+        border-radius: 0;
+    }
 }

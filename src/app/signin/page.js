@@ -25,19 +25,18 @@ export default function Signin() {
         try {
             const response = await fetch('http://43.201.47.70/users/login', options);
             if (response.ok) {
-                router.push('/signin-good');
+                router.push('/main-page/diary-list');
             } else {
                 setErrorMessage('아이디 혹은 비밀번호가 잘못되었습니다.');
             }
         } catch (error) {
             console.error('로그인 에러:', error);
             setErrorMessage('로그인 중 문제가 발생했습니다.'); 
-            router.push('/signin-bad');
         }
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="main-container">
             <img src="/logo.png" className="logo" />
             <div className="login-form">
                 <input type="text" name="id" placeholder="아이디" required />

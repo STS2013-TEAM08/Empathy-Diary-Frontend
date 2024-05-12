@@ -6,12 +6,14 @@
 
 body{
     font-family: 'Pretendard Variable', sans-serif;
-
+    right: 0;
+    bottom: 0;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
     height: 100vh;
     background-color: #FFF7E0;
 }
@@ -19,6 +21,8 @@ body{
 .container {
     width: 390px;
     height: 844px;
+    margin: 0;
+    padding: 0;
     text-align: center;
     background: white;
     border-radius: 16px;
@@ -27,9 +31,10 @@ body{
 
 @media (max-width: 530px) {
     .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      right: 0;
+      bottom: 0;
+      margin: 0;
+      padding: 0;
       width: 100%;
       height: 100%;
       box-shadow: none;
