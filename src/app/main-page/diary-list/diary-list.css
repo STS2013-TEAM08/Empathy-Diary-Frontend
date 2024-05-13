@@ -15,6 +15,29 @@
     text-decoration:none;
 }
 
+.tab2 {
+    width:50%;
+    text-align: center;
+    place-content: center;
+    padding: 19px 73px;
+    font-size: 14px;
+    color: #111111;
+    text-decoration:none;
+}
+
+.tab2-active {
+    width:50%;
+    text-align: center;
+    place-content: center;
+    padding: 19px 73px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #111111;
+    text-decoration:none;
+    border-bottom: solid #FFD686;
+}
+
+
 @media (max-width: 530px) {
     .container {
         margin: 0;
