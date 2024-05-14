@@ -15,6 +15,7 @@ export default function Signin() {
         const password = event.target.password.value;
 
         const options = {
+            // credentials: 'include',
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -25,7 +26,7 @@ export default function Signin() {
         try {
             const response = await fetch('http://43.201.47.70/users/login', options);
             if (response.ok) {
-                router.push('/main-page/diary-list');
+                router.push('/main-page/diary-list/daily');
             } else {
                 setErrorMessage('아이디 혹은 비밀번호가 잘못되었습니다.');
             }

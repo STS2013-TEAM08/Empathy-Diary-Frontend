@@ -17,11 +17,11 @@ export default function MainNavBar() {
 
     return (
         <div className="nav-bar">
-            <Link href="/main-page/diary-list" className={getLinkClassName("/main-page/diary-list")}
+            <Link href="/main-page/diary-list/daily" className={getLinkClassName("/main-page/diary-list")}
                    onClick={() => handleLinkClick("/main-page/diary-list")}>
                     <FaBook className="book-icon" />
             </Link>
-            <Link href="/main-page/emotions" className={getLinkClassName("/main-page/emotions")}
+            <Link href="/main-page/emotions/today" className={getLinkClassName("/main-page/emotions")}
                    onClick={() => handleLinkClick("/main-page/emotions")}>
                     <FaFaceSmile className="emotion-icon" />
             </Link>

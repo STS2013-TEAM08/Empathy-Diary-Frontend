@@ -10,7 +10,9 @@ export default function DiaryListPageLayout({ children }) {
     return (
     <div>
         <DiaryListNavBar />
-      {children}
+        <div className="contents">
+          {children}
+        </div>
     </div>
   );
 }
