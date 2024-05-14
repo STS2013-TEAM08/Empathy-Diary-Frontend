@@ -82,7 +82,59 @@
 }
 
 .advice-box p {
+    font-size: 14px;
+    line-height: 150%;
     text-align: left;
     padding:0;
     margin: 0;
+}
+
+.today-scroll-container {
+    height: 455px;
+    overflow: scroll;
+}
+
+.today-container {
+    height: 100%
+}
+
+.advice-send-box {
+    display: flex;
+    flex-direction: row;
+    margin: 16px 24px;
+    justify-content: center;
+}
+
+.advice-send-box input {
+    width: 291px;
+    height: 40px;
+    padding: 12px;
+    border: 1px solid #FFD686;
+    border-radius: 16px;
+    background-color: white;
+    outline: none;
+    margin: 0 10px 0 0;
+    border-radius: 16px;
+}
+
+.advice-send-box input::placeholder {
+    color: #777C89;
+    font-size: 12px;
+}
+
+.advice-send-box button {
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
+    place-content: center;
+    background-color: #FFD686;
+    border: none;
+    padding: 0;
+}
+
+.send-icon {
+    width: 15px;
+    height: 15px;
+    color: white;
+    text-align: center;
 }

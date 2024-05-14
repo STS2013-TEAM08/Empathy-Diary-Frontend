@@ -15,7 +15,7 @@ export default function Signin() {
         const password = event.target.password.value;
 
         const options = {
-            // credentials: 'include',
+            credentials: 'include',
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
