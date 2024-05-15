@@ -10,7 +10,7 @@ export default function MainPageLayout({ children }) {
     useEffect(() => {
         const fetchUserInfo = async () => {
             try {
-                const response = await fetch('http://43.201.47.70/users', {
+                const response = await fetch('https://empathydiaryapi.com/users', {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',

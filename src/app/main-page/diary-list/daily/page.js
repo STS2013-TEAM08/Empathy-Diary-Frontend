@@ -1,25 +1,66 @@
+"use client";
+
+import { useState, useEffect } from 'react';
 import Calendar from './Datepicker.js';
+import './daily.css';
 
 export default function DailyPage() {
-    const year = 2024;
-    const month = 4;
-    const day = 19;
-    const diaryContent = "오늘은 정말 행복한 하루였다. 아침에 일어나자마자 밖은 맑고 화창한 날씨였다. 나는 친구들과 함께 산책을 하며 신선한 공기를 마시고, 따뜻한 햇살을 만끽했다. 우리는 함께 맛있는 아이스크림을 먹으며 이야기를 나누고, 웃음꽃을 피웠다. 그 순간 모든 걱정거리들이 사라진 것만 같았다. 저녁에는 가족과 함께 저녁을 먹으며 오늘 있었던 즐거운 일들을 공유했다. 가족들과의 따뜻한 대화는 나를 더욱 행복하게 만들었다. 오늘 하루는 진정 행복한 추억으로 남을 것 같다. 모든 순간이 소중하고 감사한 하루였다.";
-    
+    const [selectedDate, setSelectedDate] = useState(new Date());
+    const [diaryContent, setDiaryContent] = useState("");
+    const [isDiaryAvailable, setIsDiaryAvailable] = useState(true);
+
+    useEffect(() => {
+        const fetchDiary = async (date) => {
+            const year = date.getFullYear();
+            const month = (date.getMonth() + 1).toString().padStart(2, '0'); // 월은 0부터 시작하므로 1을 더해줍니다.
+            const day = date.getDate().toString().padStart(2, '0');
+            const startDate = `${year}-${month}-${day}`;
+            const endDate = `${year}-${month}-${(date.getDate() + 1).toString().padStart(2, '0')}`;
+
+            try {
+                const response = await fetch(`https://empathydiaryapi.com/posts/period?startDate=${startDate}&endDate=${endDate}`);
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.diaries.length > 0) {
+                        setDiaryContent(data.diaries[0].content);
+                        setIsDiaryAvailable(true);
+                    } else {
+                        setIsDiaryAvailable(false);
+                    }
+                } else {
+                    console.error('Failed to fetch diary:', response.status);
+                    setIsDiaryAvailable(false);
+                }
+            } catch (error) {
+                console.error('Error fetching diary:', error);
+                setIsDiaryAvailable(false);
+            }
+        };
+
+        fetchDiary(selectedDate);
+    }, [selectedDate]);
+
+    const handleDateChange = (date) => {
+        setSelectedDate(date);
+    };
+
     return (
         <div>
             <div className="calendar-container">
-                <Calendar />
+                <Calendar onDateChange={handleDateChange} />
             </div>
-            
-            {/* <div className="no-diary">
-                <p>이 날 작성된 일기가 없습니다.</p>
-            </div> */}
-           
-            <div className="diary-content">
-                <h1>{year}.{month}.{day}</h1>
-                <p>{diaryContent}</p>
-            </div>
+            {isDiaryAvailable ? (
+                <div className="diary-content">
+                    <h1>{selectedDate.getFullYear()}.{selectedDate.getMonth() + 1}.{selectedDate.getDate()}</h1>
+                    <p>{diaryContent}</p>
+                </div>
+            ) : (
+                <div className="no-diary">
+                    <p>이 날 작성된 일기가 없습니다.</p>
+                </div>
+            )}
         </div>
     );
 }
+
+// 또 로그인 유지 안됨 ㅜㅜ

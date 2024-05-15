@@ -24,7 +24,7 @@ export default function Signin() {
         };
 
         try {
-            const response = await fetch('http://43.201.47.70/users/login', options);
+            const response = await fetch('https://empathydiaryapi.com/users/login', options);
             if (response.ok) {
                 router.push('/main-page/diary-list/daily');
             } else {
