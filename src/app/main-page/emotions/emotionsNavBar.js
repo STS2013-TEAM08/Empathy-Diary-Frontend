@@ -19,7 +19,7 @@ export default function EmotionsNavBar() {
             <Link href="/main-page/emotions/today" className={getLinkClassName("/main-page/emotions/today")}
                    onClick={() => handleLinkClick("/main-page/emotions/today")}>오늘 감정</Link>
             <Link href="/main-page/emotions/this-week" className={getLinkClassName("/main-page/emotions/this-week")}
-                   onClick={() => handleLinkClick("/main-page/emotions/selected")}>이번주 감정</Link>
+                   onClick={() => handleLinkClick("/main-page/emotions/this-week")}>이번주 감정</Link>
             <Link href="/main-page/emotions/selected" className={getLinkClassName("/main-page/emotions/selected")}
                    onClick={() => handleLinkClick("/main-page/emotions/selected")}>기간별 감정</Link>
             <Link href="/main-page/emotions/collected" className={getLinkClassName("/main-page/emotions/collected")}

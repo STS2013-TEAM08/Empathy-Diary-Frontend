@@ -1,0 +1,32 @@
+.this-week-container {
+    height: 100%;
+    padding: 24px;
+}
+
+.this-week-inst {
+    font-size: 18px;
+    text-align: left;
+    font-weight: bold;
+    line-height: 160%;
+    margin: 0 12px;
+}
+
+.this-week-graph {
+    margin: 16px 0;
+}
+
+.this-week-graph-main-container {
+    background-color: white;
+    border-radius: 16px;
+    margin: 16px 0;
+    box-shadow: 1px 3px 15px #f0f0f0;
+}
+
+.this-week-date-container h2 {
+    text-align: left;
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0 21px;
+    padding: 17px 0;
+    border-bottom: solid 1px #D9D9D9;
+}

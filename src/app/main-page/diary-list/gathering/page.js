@@ -14,8 +14,8 @@ export default function GatheringPage() {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
-                        credentials: 'include',
                     },
+                    credentials: 'include',
                 });
 
                 if (response.ok) {

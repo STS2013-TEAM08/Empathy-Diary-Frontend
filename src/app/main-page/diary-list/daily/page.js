@@ -12,13 +12,20 @@ export default function DailyPage() {
     useEffect(() => {
         const fetchDiary = async (date) => {
             const year = date.getFullYear();
-            const month = (date.getMonth() + 1).toString().padStart(2, '0'); // 월은 0부터 시작하므로 1을 더해줍니다.
+            const month = (date.getMonth() + 1).toString().padStart(2, '0');
             const day = date.getDate().toString().padStart(2, '0');
             const startDate = `${year}-${month}-${day}`;
             const endDate = `${year}-${month}-${(date.getDate() + 1).toString().padStart(2, '0')}`;
+            const options = {
+                method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                credentials: 'include',
+            }
 
             try {
-                const response = await fetch(`https://empathydiaryapi.com/posts/period?startDate=${startDate}&endDate=${endDate}`);
+                const response = await fetch(`https://empathydiaryapi.com/posts/period?startDate=${startDate}&endDate=${endDate}`, options);
                 if (response.ok) {
                     const data = await response.json();
                     if (data.diaries.length > 0) {
@@ -62,5 +69,3 @@ export default function DailyPage() {
         </div>
     );
 }
-
-// 또 로그인 유지 안됨 ㅜㅜ
