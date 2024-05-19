@@ -6,12 +6,11 @@
 
 .diary-component {
     width: 100%;
-    height:40px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 60px;
+    height: 40px;
     cursor: pointer;
 }
 
@@ -43,26 +42,33 @@
 .diary-content-gathering {
     text-align: left;
     font-size: 14px;
-    border-top: 1px solid #D9D9D9;
     padding: 16px 5px;
-    margin: 0;
+    margin: 10px 0 0 0;
     line-height: 160%;
+    width: 100%;
+    border-top: 1px solid #D9D9D9;
+    display: none; /* 기본적으로 숨김 */
 }
 
 .diary-bar-container {
     background-color: white;
     align-items: flex-start;
+    justify-content: flex-start;
     padding: 10px 16px;
-    height: 60px;
     border-radius: 16px;
     box-shadow: 1px 3px 15px #f0f0f0;
     margin: 4px 0;
     cursor: pointer;
-    /* transition: height 0.3s ease; */
     display: flex;
     flex-direction: column;
+    height: 60px; /* 기본 높이 설정 */
+    overflow: hidden;
 }
 
 .diary-bar-container.open {
-    height: auto;
+    height: auto; /* 열렸을 때 높이 자동 조정 */
+}
+
+.diary-bar-container.open .diary-content-gathering {
+    display: block; /* 열렸을 때만 표시 */
 }

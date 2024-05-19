@@ -20,7 +20,9 @@ export default function GatheringPage() {
 
                 if (response.ok) {
                     const data = await response.json();
-                    setDiaries(data.diaries);
+                    // 일기를 최신순으로 정렬
+                    const sortedDiaries = data.diaries.sort((a, b) => new Date(b.writeDate) - new Date(a.writeDate));
+                    setDiaries(sortedDiaries);
                 } else {
                     console.error('Failed to fetch diaries:', response.status);
                 }
