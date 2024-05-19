@@ -1,10 +1,14 @@
 /* Calendar 커스텀 스타일링 */
 .custom-calendar {
     border: none;
+    background-color: white; /* 달력 인터페이스 배경을 흰색으로 설정 */
+    border-radius: 16px; /* 달력 인터페이스에 둥근 모서리 추가 */
+    box-shadow: 1px 3px 15px #f0f0f0; /* 달력 인터페이스에 그림자 추가 */
+    margin-top: 10px; /* 달력과 탭 사이에 약간의 간격 추가 */
 }
 
 .calendar-wrapper {
-    padding: 25px  24px 0px 24px;
+    padding: 25px 24px 0px 24px;
 }
 
 .calendar-bar {
@@ -32,11 +36,13 @@
 
 .react-datepicker {
     font-family: 'Pretendard Variable', sans-serif;
-    background-color: transparent;
+    background-color: white; /* 달력 배경색을 흰색으로 설정 */
+    border-radius: 16px; /* 달력에 둥근 모서리 추가 */
+    box-shadow: 1px 3px 15px #f0f0f0; /* 달력에 그림자 추가 */
 }
 
 .react-datepicker__header {
-    background-color: transparent;
+    background-color: white; /* 헤더 배경색을 흰색으로 설정 */
     border-bottom: none;
     padding-bottom: 25px; /* 연.월과 요일 간의 세로 간격 */
 }
