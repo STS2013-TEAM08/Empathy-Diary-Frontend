@@ -4,12 +4,35 @@
 }
 
 .calendar-wrapper {
-    padding: 24px;
+    padding: 25px  24px 0px 24px;
+}
+
+.calendar-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 16px 24px;
+    border-radius: 16px;
+    box-shadow: 1px 3px 15px #f0f0f0;
+    cursor: pointer;
+}
+
+.calendar-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #777C89;
+}
+
+.toggle-icon {
+    width: 20px;
+    height: 20px;
+    color: #D9D9D9;
 }
 
 .react-datepicker {
     font-family: 'Pretendard Variable', sans-serif;
-    background-color: transparent; 
+    background-color: transparent;
 }
 
 .react-datepicker__header {
@@ -20,7 +43,7 @@
 
 .react-datepicker__current-month {
     font-weight: normal;
-    font-size: 18px; 
+    font-size: 18px;
     margin-bottom: 25px; /* 연.월과 요일 간의 세로 간격 */
 }
 

@@ -1,5 +1,4 @@
-export default function AdviceBox() {
-    const advice = "화이팅!";
+export default function AdviceBox({ advice }) {
     return (
         <div className="advice-box">
             <p>

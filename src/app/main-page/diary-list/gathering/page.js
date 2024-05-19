@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import DiaryBar from './diaryBar.js';
-import "./gathering.css"; 
+import "./gathering.css";
 
 export default function GatheringPage() {
     const [diaries, setDiaries] = useState([]);
@@ -20,9 +20,7 @@ export default function GatheringPage() {
 
                 if (response.ok) {
                     const data = await response.json();
-                    // 일기를 최신순으로 정렬
-                    const sortedDiaries = data.diaries.sort((a, b) => new Date(b.writeDate) - new Date(a.writeDate));
-                    setDiaries(sortedDiaries);
+                    setDiaries(data.diaries);
                 } else {
                     console.error('Failed to fetch diaries:', response.status);
                 }
@@ -36,7 +34,7 @@ export default function GatheringPage() {
 
     return (
         <div className="diary-list">
-            {diaries.map((diary) => (
+            {diaries.sort((a, b) => new Date(b.writeDate) - new Date(a.writeDate)).map((diary) => (
                 <DiaryBar key={diary.id} diary={diary} />
             ))}
         </div>
