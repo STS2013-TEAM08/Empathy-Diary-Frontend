@@ -15,14 +15,14 @@ export default function DailyPage() {
             const month = (date.getMonth() + 1).toString().padStart(2, '0');
             const day = date.getDate().toString().padStart(2, '0');
             const startDate = `${year}-${month}-${day}`;
-            const endDate = `${year}-${month}-${(date.getDate() + 1).toString().padStart(2, '0')}`;
+            const endDate = `${year}-${month}-${day}`; // 종료 날짜를 시작 날짜와 동일하게 설정
             const options = {
                 method: 'GET',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
+                headers: {
+                    'Content-Type': 'application/json',
+                },
                 credentials: 'include',
-            }
+            };
 
             try {
                 const response = await fetch(`https://empathydiaryapi.com/posts/period?startDate=${startDate}&endDate=${endDate}`, options);
