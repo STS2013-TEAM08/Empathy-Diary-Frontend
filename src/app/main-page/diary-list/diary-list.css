@@ -55,6 +55,11 @@
         border-radius: 0;
     }
 
+    .contents {
+        height: 100vh;
+        border-radius: 0;
+    }
+
     .second-nav-bar {
         width: 100%;
         height: 7vh;

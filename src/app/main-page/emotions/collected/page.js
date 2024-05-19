@@ -6,9 +6,7 @@ export default function CollectedPage() {
             <p>
                 지금까지 수집한<br></br>감정들을 확인하세요
             </p>
-            <div className="collected-emotions-container">
-                <EmotionsContainer />
-            </div>
+            <EmotionsContainer />
         </div>
     );
 }

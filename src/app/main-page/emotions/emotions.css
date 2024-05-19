@@ -9,7 +9,7 @@
 }
 
 .emotions-contents {
-    height: 664px;
+    height: 654px;
     border-radius: 0 0 16px 16px;
     background: #F8F8F8;
 }
@@ -49,6 +49,10 @@
         height: 100%;
         box-shadow: none;
         border-radius: 0;
+    }
+
+    .emotions-contents {
+        height: 100vh;
     }
 
     .emotions-nav-bar {
