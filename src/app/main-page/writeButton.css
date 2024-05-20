@@ -1,0 +1,83 @@
+.main-page {
+    position: relative; /* Make the parent component a positioned container */
+    width: 100%;
+    height: 100%; /* Ensure it takes the full height of its container */
+}
+
+.floating-button-container {
+    position: fixed; /* Fixed positioning for the button container */
+    bottom: 5%;
+    right: 50%;
+    transform: translateX(50%);
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center horizontally */
+    z-index: 1000; /* Ensure the button is on top of other elements */
+}
+
+.floating-button {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #FFD686;
+    color: white;
+    border: none;
+    box-shadow: 1px 3px 15px #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.floating-button:hover {
+    background-color: #FFC300;
+}
+
+.additional-buttons {
+    width: 350px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 15px;
+}
+
+.additional-button-1 {
+    width: 144px;
+    background-color: #FFF7E8;
+    color: #777C89;
+    border: none;
+    border-radius: 16px 16px  0 16px;
+    padding: 20px;
+    margin: 5px 0;
+    box-shadow: 1px 3px 15px #f0f0f0;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.additional-button-2 {
+    width: 144px;
+    background-color: #FFF7E8;
+    color: #777C89;
+    border: none;
+    border-radius: 16px 16px 16px 0;
+    padding: 20px;
+    margin: 5px 0;
+    box-shadow: 1px 3px 15px #f0f0f0;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.overlay {
+    position: fixed; /* Fixed positioning for the overlay */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 999; /* Ensure the overlay is behind the button but above other content */
+}

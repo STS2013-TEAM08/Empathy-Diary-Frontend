@@ -1,0 +1,37 @@
+.wwa-top-container {
+    width: 100%;
+    height: 108px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Center horizontally */
+    align-items: flex-end;
+    background-color: #FFD686;
+    border-radius: 16px 16px 0 0;
+    position: relative; /* Relative positioning to allow absolute positioning of children */
+}
+
+.wwa-top-container h1 {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px;
+    margin: 0;
+    position: absolute; /* Absolute positioning to center within parent */
+    bottom: 0; /* Align to the bottom of the container */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust positioning to truly center */
+    text-align: center; /* Center text within the h1 */
+}
+
+@media (max-width: 530px) {
+    .wwa-top-container {
+        width: 100%;
+        height: 12vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: center; /* Center horizontally */
+        align-items: flex-end;
+        background-color: #FFD686;
+        border-radius: 0;
+    }
+}

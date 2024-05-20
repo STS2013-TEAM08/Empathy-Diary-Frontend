@@ -1,8 +1,10 @@
 "use client"; 
 
+import WriteButton from './writeButton.js';
 import { useState, useEffect } from 'react';
 import "./main-page.css";
 import MainNavBar from './mainNavBar';
+import {Faplus} from "react-icons/fa6";
 
 export default function MainPageLayout({ children }) {
     const [nickname, setNickname] = useState("");
@@ -38,6 +40,7 @@ export default function MainPageLayout({ children }) {
         <p className="welcome"><span>{nickname}</span>님,<br />좋은 하루 되세요!</p>
         <MainNavBar />
       </div>
+      <WriteButton />
       {children}
     </div>
   );

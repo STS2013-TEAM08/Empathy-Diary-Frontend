@@ -1,4 +1,4 @@
-export default function MainPage() {
+export default function WriteWithAIPage() {
     return (
         <>
         </>

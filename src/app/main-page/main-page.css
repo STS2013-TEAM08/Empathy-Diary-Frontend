@@ -39,16 +39,16 @@
     background-color: white;
 }
 
-.book-icon, .emotion-icon, .profile-icon {
+.book-icon, .nav-emotion-icon, .profile-icon {
     width: 25px;
     height: 25px;
 }
 
-.tab .book-icon, .tab .emotion-icon, .tab .profile-icon {
+.tab .book-icon, .tab .nav-emotion-icon, .tab .profile-icon {
     color: white;
 }
 
-.tab-active .book-icon, .tab-active .emotion-icon, .tab-active .profile-icon {
+.tab-active .book-icon, .tab-active .nav-emotion-icon, .tab-active .profile-icon {
     color: #FFD686;
 }
 
