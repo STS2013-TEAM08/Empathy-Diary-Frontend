@@ -3,10 +3,11 @@
     height: 108px;
     display: flex;
     flex-direction: row;
-    justify-content: center; /* Center horizontally */
+    justify-content: space-between; /* Space out items to left and right */
     align-items: flex-end;
     background-color: #FFD686;
     border-radius: 16px 16px 0 0;
+    padding: 0 24px;
     position: relative; /* Relative positioning to allow absolute positioning of children */
 }
 
@@ -14,13 +15,45 @@
     color: white;
     font-size: 18px;
     font-weight: bold;
-    padding: 15px;
-    margin: 0;
-    position: absolute; /* Absolute positioning to center within parent */
-    bottom: 0; /* Align to the bottom of the container */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Adjust positioning to truly center */
+    padding: 10px;
+    margin: 0; /* Reset margin */
+    position: absolute; 
+    bottom: 10px; /* Align to the bottom of the container */
+    left: 50%; 
+    transform: translateX(-50%); 
     text-align: center; /* Center text within the h1 */
+}
+
+.wwa-before-button {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center; /* Center icon vertically */
+    justify-content: center; /* Center icon horizontally */
+    background-color: transparent;
+    border: none;
+    margin: 15px 0;
+}
+
+.wwa-before-button-icon {
+    color: white;
+    width: 20px;
+    height: auto;
+}
+
+.wwa-diary-write-button {
+    background-color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 0 12px;
+    margin: 15px 0;
+}
+
+.wwa-diary-write-button p {
+    color: #FFD686;
+    font-size: 14px;
+    padding: 0;
+    margin: 13px 0;
 }
 
 @media (max-width: 530px) {
@@ -29,7 +62,7 @@
         height: 12vh;
         display: flex;
         flex-direction: row;
-        justify-content: center; /* Center horizontally */
+        justify-content: space-between; /* Space out items to left and right */
         align-items: flex-end;
         background-color: #FFD686;
         border-radius: 0;

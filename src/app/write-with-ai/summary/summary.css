@@ -1,0 +1,49 @@
+.summary-container {
+    background-color: #F8F8F8;
+    height: 736px;
+    border-radius: 0 0 16px 16px;
+    margin: 0;
+    padding: 24px;
+}
+
+.summary-sub-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.summary-container h3 {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    padding: 0 10px;
+    margin: 24px 0 8px 0;
+}
+
+.summary-container p {
+    font-size: 14px;
+    margin: 0;
+    text-align: left;
+    padding: 0 10px;
+    margin: 8px 0;
+}
+
+
+.summary-content-container {
+    background-color: white;
+    border-radius: 16px;
+}
+
+.summary-content-container p {
+    padding: 27px 27px 54px 27px;
+}
+
+@media (max-width: 530px) {
+    .summary-container {
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    .chat-contents-container {
+        height: 70vh;
+    }
+}

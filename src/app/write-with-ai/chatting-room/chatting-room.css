@@ -1,0 +1,147 @@
+.chatting-room-container {
+    background-color: #F8F8F8;
+    height: 736px;
+    border-radius: 0 0 16px 16px;
+}
+
+.chat-contents-container {
+    height: 600px;
+    width: 100%;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow-y: scroll; /* Enable vertical scrolling */
+    overflow-x: hidden; /* Disable horizontal scrolling */
+    word-wrap: break-word; /* Wrap long words */
+    white-space: normal; /* Allow wrapping */
+}
+
+.chatbot-container {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+
+.chatbot-profile {
+    flex: 0 0 45px; /* Fixed size, does not grow or shrink */
+    width: 45px;
+    height: 45px;
+    background-color: #FFD686;
+    display: flex;
+    align-items: center; /* Center icon vertically */
+    justify-content: center; /* Center icon horizontally */
+    border-radius: 50%;
+    box-shadow: 1px 3px 15px #f0f0f0;
+}
+
+.chatbot-icon {
+    color: white;
+    width: 30px;
+    height: 30px;
+}
+
+.chatbot-comment {
+    background-color: #FFF7E8;
+    box-shadow: 1px 3px 15px #f0f0f0;
+    border-radius: 0 16px 16px 16px;
+    margin: 10px 0 0 10px;
+    word-wrap: break-word; /* Wrap long words within comments */
+    white-space: normal; /* Allow wrapping */
+    flex: 1; /* Take up remaining space */
+}
+
+.chatbot-comment p {
+    font-size: 14px;
+    padding: 0 17px;
+    word-wrap: break-word; /* Wrap long words within paragraph */
+    white-space: normal; /* Allow wrapping */
+    text-align: left;
+    line-height: 150%;
+}
+
+.my-container {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.my-comment {
+    background-color: #FFD686;
+    box-shadow: 1px 3px 15px #f0f0f0;
+    border-radius: 16px 0 16px 16px;
+    margin: 10px 0 0 10px;
+    word-wrap: break-word; /* Wrap long words within comments */
+    white-space: normal; /* Allow wrapping */
+    display: inline-block; /* Adjust width based on content */
+}
+
+.my-comment p {
+    font-size: 14px;
+    padding: 0 17px;
+    word-wrap: break-word; /* Wrap long words within paragraph */
+    white-space: normal; /* Allow wrapping */
+    text-align: left;
+    line-height: 150%;
+}
+
+.chat-input-field {
+    display: flex;
+    flex-direction: row;
+    margin: 16px 24px;
+    justify-content: center;
+}
+
+.chat-input-field input {
+    width: 291px;
+    height: 40px;
+    padding: 12px;
+    border: 1px solid #FFD686;
+    border-radius: 16px;
+    background-color: white;
+    outline: none;
+    margin: 0 10px 0 0;
+    border-radius: 16px;
+    font-size: 12px;
+}
+
+.chat-input-field input::placeholder {
+    color: #777C89;
+    font-size: 12px;
+}
+
+.chat-input-field button {
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
+    place-content: center;
+    background-color: #FFD686;
+    border: none;
+    padding: 0;
+}
+
+.comment-send-icon {
+    width: 15px;
+    height: 15px;
+    color: white;
+    text-align: center;
+}
+
+@media (max-width: 530px) {
+    .chatting-room-container {
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    .chat-contents-container {
+        height: 70vh;
+    }
+}
