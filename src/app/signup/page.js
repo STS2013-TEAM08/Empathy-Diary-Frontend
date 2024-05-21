@@ -56,7 +56,7 @@ export default function Signup() {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="main-container">
+        <form onSubmit={handleSubmit} className="signup-main-container">
             <div className="signup-form">
                 <input type="text" name="nickname" placeholder="닉네임" required />
                 <input type="text" name="id" placeholder="아이디" required />

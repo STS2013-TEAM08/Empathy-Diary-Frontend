@@ -1,12 +1,88 @@
-import "./main.css";
+"use client";
+
+import React, { useEffect, useState } from 'react';
 import LogoutButton from './logoutButton.js';
 import MyInfoButton from './myInfoButton.js';
+import "./main.css";
 
 export default function ProfileMainPage() {
-    const nickname = "윤빈";
-    const mailAddress = "lillycho0810@naver.com"
-    const diaryNum = 10;
-    const emotionNum = 20;
+    const [nickname, setNickname] = useState("");
+    const [mailAddress, setMailAddress] = useState("");
+    const [diaryNum, setDiaryNum] = useState(0);
+    const [emotionNum, setEmotionNum] = useState(0);
+
+    useEffect(() => {
+        const fetchUserInfo = async () => {
+            try {
+                const response = await fetch('https://empathydiaryapi.com/users', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    credentials: 'include',
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    setNickname(data.nickname);
+                    setMailAddress(data.email);
+                } else {
+                    console.error('Failed to fetch user info:', response.status);
+                }
+            } catch (error) {
+                console.error('Error fetching user info:', error);
+            }
+        };
+
+        const fetchDiaryCount = async () => {
+            try {
+                const response = await fetch('https://empathydiaryapi.com/posts', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    credentials: 'include',
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    setDiaryNum(data.diaries.length);
+                } else {
+                    console.error('Failed to fetch diaries:', response.status);
+                }
+            } catch (error) {
+                console.error('Error fetching diaries:', error);
+            }
+        };
+
+        const fetchEmotionCount = async () => {
+            try {
+                const response = await fetch('https://empathydiaryapi.com/emotions', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    credentials: 'include',
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    const totalEmotions = data.emotions.reduce((sum, emotion) => {
+                        return sum + Object.values(emotion)[0];
+                    }, 0);
+                    setEmotionNum(totalEmotions);
+                } else {
+                    console.error('Failed to fetch emotions:', response.status);
+                }
+            } catch (error) {
+                console.error('Error fetching emotions:', error);
+            }
+        };
+
+        fetchUserInfo();
+        fetchDiaryCount();
+        fetchEmotionCount();
+    }, []);
 
     return (
         <div className="profile-main-container">

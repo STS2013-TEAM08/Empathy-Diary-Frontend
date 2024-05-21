@@ -158,13 +158,16 @@ export default function InputBoxContainer() {
                     취소
                 </button>
                 {isSubmitted ? (
-                    <Link href="/main-page/profile/complete">
-                        <a className="my-info-complete-button">완료</a>
+                    <Link href="/main-page/profile/complete" className="my-info-complete-button">
+                        완료
                     </Link>
                 ) : (
-                    <button className="my-info-complete-button" onClick={handleSubmit}>
+                    // <button className="my-info-complete-button" onClick={handleSubmit}>
+                    //     완료
+                    // </button>
+                    <Link href="/main-page/profile/complete" className="my-info-complete-button" onClick={handleSubmit}>
                         완료
-                    </button>
+                    </Link>
                 )}
             </div>
         </div>

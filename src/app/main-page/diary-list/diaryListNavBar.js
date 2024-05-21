@@ -1,15 +1,25 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function DiaryListNavBar() {
+    const pathname = usePathname();
     const [activeTab, setActiveTab] = useState("/main-page/diary-list/daily");
+
+    useEffect(() => {
+        if (pathname.startsWith("/main-page/diary-list/daily")) {
+            setActiveTab("/main-page/diary-list/daily");
+        } else if (pathname.startsWith("/main-page/diary-list/gathering")) {
+            setActiveTab("/main-page/diary-list/gathering");
+        }
+    }, [pathname]);
 
     const handleLinkClick = (path) => {
         setActiveTab(path);
     };
-    
+
     const getLinkClassName = (path) => {
         return activeTab === path ? "tab2-active" : "tab2";
     };

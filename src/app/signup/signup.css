@@ -1,4 +1,4 @@
-.main-container {
+.signup-main-container {
     position: relative;
     top: 159px;
 }
@@ -65,7 +65,7 @@
 }
 
 @media (max-width: 530px) {
-    .main-container {
+    .signup-main-container {
         display: flex;
         flex-direction: column;
         justify-content: center;

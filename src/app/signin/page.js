@@ -37,7 +37,7 @@ export default function Signin() {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="main-container">
+        <form onSubmit={handleSubmit} className="signin-main-container">
             <img src="/logo.png" className="logo" />
             <div className="login-form">
                 <input type="text" name="id" placeholder="아이디" required />

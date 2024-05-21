@@ -1,0 +1,28 @@
+.profile-complete-checkImg {
+    width: 70px;
+    height: 70px;
+}
+
+.profile-complete-container {
+    margin: 106px 0;
+}
+
+.profile-complete-container p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.profile-complete-container button {
+    background-color: #FFD686;
+    border: none;
+    border-radius: 100px;
+    padding: 16px 40px;;
+    margin: 49px;
+}
+
+.profile-complete-container button a {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    padding:0;
+}

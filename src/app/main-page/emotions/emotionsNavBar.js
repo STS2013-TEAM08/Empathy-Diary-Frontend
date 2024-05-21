@@ -1,15 +1,29 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function EmotionsNavBar() {
+    const pathname = usePathname();
     const [activeTab, setActiveTab] = useState("/main-page/emotions/today");
+
+    useEffect(() => {
+        if (pathname.startsWith("/main-page/emotions/today")) {
+            setActiveTab("/main-page/emotions/today");
+        } else if (pathname.startsWith("/main-page/emotions/this-week")) {
+            setActiveTab("/main-page/emotions/this-week");
+        } else if (pathname.startsWith("/main-page/emotions/selected")) {
+            setActiveTab("/main-page/emotions/selected");
+        } else if (pathname.startsWith("/main-page/emotions/collected")) {
+            setActiveTab("/main-page/emotions/collected");
+        }
+    }, [pathname]);
 
     const handleLinkClick = (path) => {
         setActiveTab(path);
     };
-    
+
     const getLinkClassName = (path) => {
         return activeTab === path ? "tab-emotions-active" : "tab-emotions";
     };

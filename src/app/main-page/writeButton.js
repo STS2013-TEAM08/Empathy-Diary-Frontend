@@ -1,14 +1,15 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import { FaPlus } from "react-icons/fa6";
 import "./writeButton.css";
 
 export default function WriteButton() {
     const [isOverlayVisible, setOverlayVisible] = useState(false);
-    const router = useRouter(); // Initialize the router
+    const router = useRouter();
+    const pathname = usePathname();
 
     const handleButtonClick = () => {
         setOverlayVisible(!isOverlayVisible);
@@ -35,6 +36,13 @@ export default function WriteButton() {
             console.error('Error creating chatroom:', error);
         }
     };
+
+    // Determine if the button should be visible
+    const isVisible = !pathname.startsWith('/main-page/profile');
+
+    if (!isVisible) {
+        return null; // Don't render the button if the path starts with '/main-page/profile'
+    }
 
     return (
         <div className="main-page">
