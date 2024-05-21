@@ -3,12 +3,14 @@
 import React from 'react';
 import "./summary.css";
 
-export default function SummaryContainer({ content }) {
+export default function SummaryContainer({ content, setContent }) {
+    const handleContentChange = (e) => {
+        setContent(e.target.value);
+    };
+
     return (
-        <div>
-            <div className="summary-content-container">
-                <p>{content}</p>
-            </div>
+        <div className="summary-sub-container">
+            <textarea value={content} onChange={handleContentChange} />
         </div>
     );
 }
