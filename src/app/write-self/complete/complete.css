@@ -1,0 +1,114 @@
+.complete-container {
+    background-color: #F8F8F8;
+    height: 736px;
+    border-radius: 0 0 16px 16px;
+    margin: 0;
+    padding: 24px;
+}
+
+.complete-sub-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.wwa-complete-inst {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0 10px 0;
+}
+
+.wwa-complete-inst h3{
+    margin: 20px 0 5px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.wwa-complete-inst p{
+    margin: 5px 0 0 0;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.wwa-complete-checkImg {
+    width: 70px;
+    height: 70px;
+}
+
+.wwa-emotion-container {
+    background-color: white;
+    height:117px;
+    display:flex;
+    flex-direction: row;
+    border-radius: 16px;
+    box-shadow: 1px 3px 15px #f0f0f0;
+    align-items: center;
+    justify-content: center;
+    margin: 16px 0;
+}
+
+.wwa-emotion-inst {
+    border-right: solid 1px #D9D9D9;
+    padding: 16px;
+}
+
+.wwa-emotion-inst h3 {
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0 0 10px 0;
+}
+
+.wwa-emotion-inst p {
+    font-size: 24px;
+    font-weight: normal;
+    margin:0;
+}
+
+.wwa-emotion-icon {
+    width: 80px;
+    height: 80px;
+}
+
+.wwa-emotion-score {
+    padding: 16px;
+}
+
+.wwa-emotion-score p {
+    font-size: 14px;
+}
+
+.wwa-diary-complete-content-container {
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 1px 3px 15px #f0f0f0;
+    padding: 24px 24px 36px 24px;
+}
+
+.wwa-diary-complete-content-container p{
+    font-size: 14px;
+    line-height: 170%;
+    margin: 0;
+    text-align: left;
+}
+
+.wwa-goback-button {
+    width: 117px;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 24px auto; /* Center the button horizontally */
+    padding: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    border:none;
+    background-color: #FFD686;
+    color: white;
+}
+
+@media (max-width: 530px) {
+    .complete-container {
+        height: 100vh;
+        border-radius: 0;
+    }
+}

@@ -25,8 +25,8 @@ export default function MainNavBar() {
                    onClick={() => handleLinkClick("/main-page/emotions")}>
                     <FaFaceSmile className="nav-emotion-icon" />
             </Link>
-            <Link href="/main-page/profile" className={getLinkClassName("/main-page/profile")}
-                   onClick={() => handleLinkClick("/main-page/profile")}>
+            <Link href="/main-page/profile/main" className={getLinkClassName("/main-page/profile")}
+                   onClick={() => handleLinkClick("/main-page/profile/main")}>
                     <FaUser className="profile-icon" />
             </Link>
         </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { FaPlus } from "react-icons/fa6";
 import "./writeButton.css";
@@ -41,9 +42,11 @@ export default function WriteButton() {
             <div className="floating-button-container">
                 {isOverlayVisible && (
                     <div className="additional-buttons">
-                        <button className="additional-button-1" onClick={handleButtonClick}>
-                            직접 작성
-                        </button>
+                        <Link href="/write-self/write" passHref>
+                            <button className="additional-button-1">
+                                직접 작성
+                            </button>
+                        </Link>
                         <button className="additional-button-2" onClick={handleWriteWithAI}>
                             AI 챗봇과 작성
                         </button>
