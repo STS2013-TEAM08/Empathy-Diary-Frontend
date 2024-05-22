@@ -167,11 +167,7 @@ const GraphCustomRange = ({ startDate, endDate }) => {
 
   return (
     <div className="graph-container">
-      {!startDate || !endDate ? (
-        <p className="no-data-message">감정을 확인하고 싶은 기간을 선택해주세요.</p>
-      ) : (
-        <Line options={options} data={data} />
-      )}
+      <Line options={options} data={data} />
     </div>
   );
 };

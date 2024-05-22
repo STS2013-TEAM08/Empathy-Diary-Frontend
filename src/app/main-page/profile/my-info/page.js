@@ -2,8 +2,6 @@
 
 import React, { useRef } from 'react';
 import InputBoxContainer from './inputBoxContainer.js';
-import CancelButton from './cancelButton.js';
-import CompleteButton from './completeButton.js';
 import "./my-info.css";
 
 export default function MyInfoPage() {

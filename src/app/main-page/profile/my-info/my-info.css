@@ -18,6 +18,7 @@
 }
 
 .my-info-form {
+    width: 100%;
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -29,7 +30,7 @@
     display: flex; 
     flex-direction: row;
     justify-content: space-between;
-    margin: 10px 0;
+    margin: 30px 0;
 }
 
 .my-info-cancel-button {
@@ -50,10 +51,15 @@
     padding: 16px 40px;
     box-shadow: 1px 3px 15px #f0f0f0;
     color: white;
+    text-decoration: none;
+}
+
+.my-info-cancel-button {
+    text-decoration: none;
 }
 
 .input-box {
-    width: 326px;
+    width: 100%;
     height: 60px;
     border: solid 1px #FFD686;
     border-radius: 16px;
@@ -89,4 +95,19 @@
     font-size: 12px;
     color: red;
     font-weight: normal;
+}
+
+@media (max-width: 530px) {
+    .profile-container {
+        margin: 0;
+        padding: 80px 0;
+        width: 100%;
+        height: 100%;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .profile-contents {
+        height: 80vh;
+    }
 }

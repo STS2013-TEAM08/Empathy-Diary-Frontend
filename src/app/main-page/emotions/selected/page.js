@@ -15,7 +15,11 @@ export default function SelectedPage() {
   return (
     <div className="selected-container">
       <Calendar onDateChange={handleDateChange} />
-      <GraphCustomRange startDate={selectedDates.start} endDate={selectedDates.end} />
+      {!selectedDates.start || !selectedDates.end ? (
+        <p className="no-data-message">감정을 확인하고 싶은 기간을 선택해주세요.</p>
+      ) : (
+        <GraphCustomRange startDate={selectedDates.start} endDate={selectedDates.end} />
+      )}
     </div>
   );
 }

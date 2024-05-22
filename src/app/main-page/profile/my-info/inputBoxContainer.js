@@ -16,6 +16,7 @@ export default function InputBoxContainer() {
     });
 
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
 
     useEffect(() => {
         const fetchUserInfo = async () => {
@@ -57,7 +58,8 @@ export default function InputBoxContainer() {
         }));
     };
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (e) => {
+        e.preventDefault(); // Prevent default link behavior
         try {
             const response = await fetch('https://empathydiaryapi.com/users', {
                 method: 'PATCH',
@@ -77,11 +79,16 @@ export default function InputBoxContainer() {
                 const data = await response.text();
                 console.log('User info updated successfully:', data);
                 setIsSubmitted(true);
+                setErrorMessage('');
             } else {
-                console.error('Failed to update user info:', response.status);
+                const errorData = await response.json();
+                setErrorMessage(errorData.message || 'Failed to update user info');
+                setIsSubmitted(false);
             }
         } catch (error) {
             console.error('Error updating user info:', error);
+            setErrorMessage('Error updating user info');
+            setIsSubmitted(false);
         }
     };
 
@@ -153,21 +160,19 @@ export default function InputBoxContainer() {
                     required
                 />
             </div>
+            {errorMessage && <p className="error-message">{errorMessage}</p>}
             <div className="my-info-buttons">
-                <button className="my-info-cancel-button">
+                <Link href="/main-page/profile/main" className="my-info-cancel-button">
                     취소
-                </button>
+                </Link>
                 {isSubmitted ? (
                     <Link href="/main-page/profile/complete" className="my-info-complete-button">
                         완료
                     </Link>
                 ) : (
-                    // <button className="my-info-complete-button" onClick={handleSubmit}>
-                    //     완료
-                    // </button>
-                    <Link href="/main-page/profile/complete" className="my-info-complete-button" onClick={handleSubmit}>
+                    <button className="my-info-complete-button" onClick={handleSubmit}>
                         완료
-                    </Link>
+                    </button>
                 )}
             </div>
         </div>
