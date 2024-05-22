@@ -1,7 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import './graph.css';
+import React, { useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -13,19 +12,7 @@ import {
   Tooltip,
   Legend
 } from "chart.js";
-import {
-    FaFaceSmile,
-    FaFaceGrinHearts,
-    FaFaceSmileBeam,
-    FaFaceFrownOpen,
-    FaFaceSadTear,
-    FaFaceAngry,
-    FaFaceSurprise,
-    FaFaceMeh,
-    FaFaceGrimace,
-    FaFaceFrown,
-    FaFaceGrinBeamSweat
-} from "react-icons/fa6";
+import './graph.css';
 
 ChartJS.register(
   CategoryScale,
@@ -37,69 +24,41 @@ ChartJS.register(
   Legend
 );
 
-const emotionIcons = {
-  "기쁨": FaFaceSmile,
-  "사랑": FaFaceGrinHearts,
-  "뿌듯함": FaFaceSmileBeam,
-  "우울": FaFaceFrownOpen,
-  "불안": FaFaceSadTear,
-  "분노": FaFaceAngry,
-  "놀람": FaFaceSurprise,
-  "외로움": FaFaceMeh,
-  "공포": FaFaceGrimace,
-  "후회": FaFaceFrown,
-  "부끄러움": FaFaceGrinBeamSweat
-};
-
-const emotionColors = {
-  "기쁨": "#f1ff99",
-  "사랑": "#ffb3de",
-  "뿌듯함": "#fff0b3",
-  "우울": "#b6b3ff",
-  "불안": "#ffdbb3",
-  "분노": "#ffc3b3",
-  "놀람": "#bdffb3",
-  "외로움": "#c2b8cf",
-  "공포": "#c9afb4",
-  "후회": "#cccccc",
-  "부끄러움": "#c1dbda"
-};
-
-const GraphThisWeek = () => {
+const GraphCustomRange = ({ startDate, endDate }) => {
   const [data, setData] = useState({
     labels: [],
     datasets: [
       {
         label: "긍정점수",
         data: [],
-        backgroundColor: "#D07878",
+        backgroundColor: "transparent",
         borderColor: "#D07878",
+        borderWidth: 1, // Make the line thinner
+        pointRadius: 0, // Remove the points
         spanGaps: true, // Enable gap handling
       },
       {
         label: "부정점수",
         data: [],
-        backgroundColor: "#6887D4",
+        backgroundColor: "transparent",
         borderColor: "#6887D4",
+        borderWidth: 1, // Make the line thinner
+        pointRadius: 0, // Remove the points
         spanGaps: true, // Enable gap handling
       },
     ],
   });
 
-  const [emotions, setEmotions] = useState(Array(7).fill(null));
-
   useEffect(() => {
+    if (!startDate || !endDate) return;
+
     const fetchData = async () => {
-      const today = new Date();
       const dates = [];
       const positiveScores = [];
       const negativeScores = [];
-      const fetchedEmotions = [];
 
-      for (let i = 6; i >= 0; i--) {
-        const date = new Date(today);
-        date.setDate(today.getDate() - i);
-
+      let date = new Date(startDate);
+      while (date <= endDate) {
         const year = date.getFullYear();
         const month = (date.getMonth() + 1).toString().padStart(2, '0');
         const day = date.getDate().toString().padStart(2, '0');
@@ -122,23 +81,21 @@ const GraphThisWeek = () => {
               const diary = data.diaries[0];
               positiveScores.push(diary.positiveScore);
               negativeScores.push(diary.negativeScore);
-              fetchedEmotions.push(diary.emotions[0]);
             } else {
               positiveScores.push(null); // Use null for missing data
               negativeScores.push(null); // Use null for missing data
-              fetchedEmotions.push(null);
             }
           } else {
             positiveScores.push(null); // Use null for missing data
             negativeScores.push(null); // Use null for missing data
-            fetchedEmotions.push(null);
           }
         } catch (error) {
           console.error('Error fetching diary:', error);
           positiveScores.push(null); // Use null for missing data
           negativeScores.push(null); // Use null for missing data
-          fetchedEmotions.push(null);
         }
+
+        date.setDate(date.getDate() + 1);
       }
 
       setData({
@@ -149,6 +106,8 @@ const GraphThisWeek = () => {
             data: positiveScores,
             backgroundColor: "#D07878",
             borderColor: "#D07878",
+            borderWidth: 1, // Make the line thinner
+            pointRadius: 0, // Remove the points
             spanGaps: true, // Enable gap handling
           },
           {
@@ -156,16 +115,16 @@ const GraphThisWeek = () => {
             data: negativeScores,
             backgroundColor: "#6887D4",
             borderColor: "#6887D4",
+            borderWidth: 1, // Make the line thinner
+            pointRadius: 0, // Remove the points
             spanGaps: true, // Enable gap handling
           },
         ],
       });
-
-      setEmotions(fetchedEmotions);
     };
 
     fetchData();
-  }, []);
+  }, [startDate, endDate]);
 
   const options = {
     responsive: true,
@@ -175,16 +134,16 @@ const GraphThisWeek = () => {
     scales: {
       x: {
         grid: {
-          display: true, // Enable grid display
-          color: "#777C89", // X-axis grid color
+          display: false, // Disable grid display for X-axis
         },
         ticks: {
-          color: "#777C89", // X-axis label color
+          display: false, // Hide X-axis labels
         },
+        display: false // Ensure the X-axis is not displayed
       },
       y: {
         grid: {
-          display: false, // Disable Y-axis grid lines
+          display: false, // Disable grid display for Y-axis
         },
         ticks: {
           stepSize: 50,
@@ -192,6 +151,7 @@ const GraphThisWeek = () => {
           min: 0,
           color: "#777C89", // Y-axis label color
         },
+        display: true // Ensure the Y-axis is displayed
       },
     },
     plugins: {
@@ -200,25 +160,20 @@ const GraphThisWeek = () => {
         labels: {
           color: "#777C89" // Legend label color
         },
+        display: true // Ensure the legend is displayed
       },
     },
   };
 
   return (
-    <div className="graph-container"> 
-        <div className="emotion-thisweek-container">
-            {emotions.map((emotion, index) => {
-              const EmotionIcon = emotion ? emotionIcons[emotion] : null;
-              return (
-                <div key={index} className="day-emotion">
-                  {EmotionIcon && <EmotionIcon style={{ color: emotionColors[emotion], fontSize: "24px" }} />}
-                </div>
-              );
-            })}
-        </div>
-      <Line options={options} data={data} />
+    <div className="graph-container">
+      {!startDate || !endDate ? (
+        <p className="no-data-message">감정을 확인하고 싶은 기간을 선택해주세요.</p>
+      ) : (
+        <Line options={options} data={data} />
+      )}
     </div>
   );
 };
 
-export default GraphThisWeek;
+export default GraphCustomRange;

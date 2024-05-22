@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Calendar from './Datepicker.js';
-import GraphContainer from './graphContainer.js';
+import GraphCustomRange from './graph.js';
 import './selected.css'; // 스타일링 파일을 임포트
 
 export default function SelectedPage() {
@@ -15,7 +15,7 @@ export default function SelectedPage() {
   return (
     <div className="selected-container">
       <Calendar onDateChange={handleDateChange} />
-      <GraphContainer startDate={selectedDates.start} endDate={selectedDates.end} />
+      <GraphCustomRange startDate={selectedDates.start} endDate={selectedDates.end} />
     </div>
   );
 }

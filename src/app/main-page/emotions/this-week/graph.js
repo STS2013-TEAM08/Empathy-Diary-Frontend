@@ -74,6 +74,8 @@ const GraphThisWeek = () => {
         data: [],
         backgroundColor: "#D07878",
         borderColor: "#D07878",
+        borderWidth: 1, // Make the line thinner
+        pointRadius: 0, // Remove the points
         spanGaps: true, // Enable gap handling
       },
       {
@@ -81,6 +83,8 @@ const GraphThisWeek = () => {
         data: [],
         backgroundColor: "#6887D4",
         borderColor: "#6887D4",
+        borderWidth: 1, // Make the line thinner
+        pointRadius: 0, // Remove the points
         spanGaps: true, // Enable gap handling
       },
     ],
@@ -149,6 +153,8 @@ const GraphThisWeek = () => {
             data: positiveScores,
             backgroundColor: "#D07878",
             borderColor: "#D07878",
+            borderWidth: 1, // Make the line thinner
+            pointRadius: 0, // Remove the points
             spanGaps: true, // Enable gap handling
           },
           {
@@ -156,6 +162,8 @@ const GraphThisWeek = () => {
             data: negativeScores,
             backgroundColor: "#6887D4",
             borderColor: "#6887D4",
+            borderWidth: 1, // Make the line thinner
+            pointRadius: 0, // Remove the points
             spanGaps: true, // Enable gap handling
           },
         ],
