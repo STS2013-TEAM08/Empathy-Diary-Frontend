@@ -94,7 +94,7 @@ export default function ProfileMainPage() {
                     <p>{diaryNum}개</p>
                 </div>
                 <div className="info-box">
-                    <h3>수집한 감정</h3>
+                    <h3>수집한<br></br>감정</h3>
                     <p>{emotionNum}개</p>
                 </div>
             </div>

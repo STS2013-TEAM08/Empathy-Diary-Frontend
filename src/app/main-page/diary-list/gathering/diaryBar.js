@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState } from "react";
 import {
@@ -38,6 +38,7 @@ export default function DiaryBar({ diary }) {
         setIsOpen(!isOpen);
     };
 
+    // Get the first emotion from the emotions list
     const mainEmotion = diary.emotions && diary.emotions.length > 0 ? diary.emotions[0] : "기쁨";
     const { icon: EmotionIcon, color: emotionColor } = emotionIcons[mainEmotion] || { icon: FaFaceSmile, color: "#fcffb3" };
 

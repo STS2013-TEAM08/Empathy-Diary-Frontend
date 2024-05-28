@@ -1,5 +1,5 @@
 .profile-main-contents {
-    padding: 24px;
+    padding: 0;
 }
 
 .profile-main-container {
@@ -37,6 +37,7 @@
 }
 
 .info-box {
+    width: 80%;
     background-color: white;
     display: flex;
     flex-direction: row;

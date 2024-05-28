@@ -6,7 +6,7 @@
 
 .floating-button-container {
     position: fixed; /* Fixed positioning for the button container */
-    bottom: 5%;
+    bottom: 10%;
     right: 50%;
     transform: translateX(50%);
     display: flex; /* Use flexbox */
